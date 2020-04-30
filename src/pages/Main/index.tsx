@@ -1,10 +1,11 @@
 import React from 'react';
 
+import Drawer from '../../components/Main/Drawer';
 
-import Header from '../../components/Main/Header';
+const Main = () => {
+  const labelsMenu = ['Home', 'Programação', 'Organizadores', 'Inscrição'];
 
-const Main = () => (
-  <Header />
-);
+  return <Drawer labelsMenu={labelsMenu} />;
+};
 
 export default Main;

@@ -2,17 +2,11 @@ import styled from 'styled-components';
 
 
 import colors from '../../../utils/variables/colors';
-import metrics from '../../../utils/variables/metrics';
 
 export const Container = styled.div`
+  height: 70px;
   display: flex;
   width: 100%;
-  background-color: ${colors.blue};
+  background-color: ${colors.primary};
   align-items: center;
-  padding: ${metrics.padding}px;
-`;
-
-export const Text = styled.h1`
-  color: white;
-  padding-left: ${metrics.padding}px;
 `;

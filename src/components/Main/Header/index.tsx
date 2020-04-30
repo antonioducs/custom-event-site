@@ -1,15 +1,16 @@
 import React from 'react';
 
-import { Container, Text } from './styles';
+import Menu from './Menu';
+import { Container } from './styles';
 
+const Header = (props: { labelsMenu: Array<string> }) => {
+  const { labelsMenu } = props;
 
-const Header = () => (
-  <Container>
-    <Text>Home</Text>
-    <Text>Programação</Text>
-    <Text>Organização</Text>
-    <Text>Inscrições</Text>
-  </Container>
-);
+  return (
+    <Container>
+      {labelsMenu.length && labelsMenu.map((item, index) => <Menu key={index.toString()} label={item} />)}
+    </Container>
+  );
+};
 
 export default Header;
