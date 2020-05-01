@@ -1,8 +1,8 @@
 import styled from 'styled-components';
 
-import colors from '../../../../utils/variables/colors';
-import fonts from '../../../../utils/variables/fonts';
-import metrics from '../../../../utils/variables/metrics';
+import colors from '../../../../../utils/variables/colors';
+import fonts from '../../../../../utils/variables/fonts';
+import metrics from '../../../../../utils/variables/metrics';
 
 export const Bar = styled.div`
   width: 0%;

@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 
-import colors from '../../../utils/variables/colors';
+import colors from '../../../../utils/variables/colors';
 
 export const Container = styled.div`
   height: 70px;

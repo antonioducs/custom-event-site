@@ -1,11 +1,13 @@
 import styled, { css } from 'styled-components';
 
-import colors from '../../../utils/variables/colors';
-import fonts from '../../../utils/variables/fonts';
-import metrics from '../../../utils/variables/metrics';
+import colors from '../../../../utils/variables/colors';
+import fonts from '../../../../utils/variables/fonts';
+import metrics from '../../../../utils/variables/metrics';
 
 
-export const MenuButton = styled.div`
+export const MenuButton = styled.a`
+  text-decoration: none;
+  cursor: pointer;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -33,30 +35,30 @@ export const HeaderDrawer = styled.div`
 export const BarTop = styled.div`
   position: relative;
   background-color: ${colors.primary};
-  width: 50px;
-  height: 6px;
+  width: 30px;
+  height: 4px;
   transition: transform 1s;
 `;
 
 export const BarMid = styled.div`
   position: relative;
-  margin-top: 10px;
+  margin-top: 8px;
   background-color: ${colors.primary};
-  width: 50px;
-  height: 6px;
+  width: 30px;
+  height: 4px;
   transition: transform 1s;
 `;
 
 export const BarBot = styled.div`
   position: relative;
-  margin-top: 10px;
+  margin-top: 8px;
   background-color: ${colors.primary};
-  width: 50px;
-  height: 6px;
+  width: 30px;
+  height: 4px;
   transition: width 1s;
 `;
 
-export const DrawerButton = styled.button`
+export const DrawerButton = styled.div`
   position: absolute;
   cursor: pointer;
   text-decoration: none;
@@ -71,14 +73,11 @@ export const DrawerButton = styled.button`
   left: -20px;
   transition: all 1s;
 
-  &:hover {
-    background-color: ${colors.lightGray};
-  }
 
   ${(props: { pressedButton: boolean }) => (props.pressedButton
     ? css`
           ${BarTop} {
-            transform: rotate(45deg) translateY(11px) translateX(12px);
+            transform: rotate(45deg) translateY(8px) translateX(9px);
           }
           ${BarBot} {
             width: 0%;
@@ -92,9 +91,18 @@ export const DrawerButton = styled.button`
     : css``)}
 `;
 
+export const Backdrop = styled.div`
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  background-color: ${colors.black};
+  z-index: -1;
+  opacity: 0.4;
+`;
+
 export const Side = styled.div`
   height: 100%;
-  width: 30%;
+  width: 300px;
   background-color: ${colors.primary};
   position: absolute;
   transition: transform 1s;

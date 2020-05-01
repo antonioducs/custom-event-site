@@ -1,16 +1,25 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 
-import Menu from './Menu';
-import { Container } from './styles';
+import { CustomWindow } from '../../../utils/interfaces/CustomWindow';
+import Bar from './Bar';
+import Drawer from './Drawer';
+
+declare let window: CustomWindow;
 
 const Header = (props: { labelsMenu: Array<string> }) => {
   const { labelsMenu } = props;
+  const [width, setWidth] = useState(window.innerWidth);
 
-  return (
-    <Container>
-      {labelsMenu.length && labelsMenu.map((item, index) => <Menu key={index.toString()} label={item} />)}
-    </Container>
-  );
+  const handleResize = () => {
+    setWidth(window.innerWidth);
+  };
+
+  useEffect(() => {
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+
+  return width < 720 ? <Drawer labelsMenu={labelsMenu} /> : <Bar labelsMenu={labelsMenu} />;
 };
 
 export default Header;
