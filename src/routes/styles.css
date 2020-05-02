@@ -11,4 +11,23 @@ body {
   font: 400 14px Roboto, sans-seif;
   background: #f0f0f5;
   -webkit-font-smoothing: antialiased;
+  display: block;
+  position: relative;
+}
+
+html,
+body {
+  overflow-x: hidden;
+}
+
+@media (orientation: landscape) {
+  body {
+    height: 100vh;
+  }
+}
+
+@media (orientation: portrait) {
+  body {
+    height: 100vh;
+  }
 }

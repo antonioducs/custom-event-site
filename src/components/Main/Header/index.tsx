@@ -19,7 +19,7 @@ const Header = (props: { labelsMenu: Array<string> }) => {
     return () => window.removeEventListener('resize', handleResize);
   }, []);
 
-  return width < 720 ? <Drawer labelsMenu={labelsMenu} /> : <Bar labelsMenu={labelsMenu} />;
+  return width < 900 ? <Drawer labelsMenu={labelsMenu} /> : <Bar labelsMenu={labelsMenu} />;
 };
 
 export default Header;

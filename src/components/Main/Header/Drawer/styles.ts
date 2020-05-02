@@ -59,6 +59,7 @@ export const BarBot = styled.div`
 `;
 
 export const DrawerButton = styled.div`
+  z-index: 1;
   position: absolute;
   cursor: pointer;
   text-decoration: none;
@@ -95,13 +96,14 @@ export const Backdrop = styled.div`
   width: 100%;
   height: 100%;
   position: absolute;
-  background-color: ${colors.black};
-  z-index: -1;
+  background-color: ${colors.lightGray};
+  z-index: 0;
   opacity: 0.4;
 `;
 
 export const Side = styled.div`
-  height: 100%;
+  z-index: 1;
+  min-height: 100%;
   width: 300px;
   background-color: ${colors.primary};
   position: absolute;
